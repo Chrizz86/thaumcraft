@@ -1,0 +1,136 @@
+Hey Azanor when i scan the netherportal with the thaumometer i get this crash:
+
+---- Minecraft Crash Report ----
+// Oops.
+
+Time: 15.10.13 22:38
+Description: Unexpected error
+
+java.lang.NullPointerException
+at thaumcraft.client.renderers.item.ItemThaumometerRenderer.doScan(ItemThaumometerRenderer.java:304)
+at thaumcraft.client.renderers.item.ItemThaumometerRenderer.renderItem(ItemThaumometerRenderer.java:170)
+at net.minecraftforge.client.ForgeHooksClient.renderEquippedItem(ForgeHooksClient.java:200)
+at net.minecraft.client.renderer.ItemRenderer.renderItem(ItemRenderer.java:89)
+at net.minecraft.client.renderer.ItemRenderer.func_78440_a(ItemRenderer.java:490)
+at net.minecraft.client.renderer.EntityRenderer.func_78476_b(EntityRenderer.java:712)
+at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1296)
+at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1006)
+at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:944)
+at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:836)
+at net.minecraft.client.main.Main.main(SourceFile:101)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at net.minecraft.launchwrapper.Launch.launch(Launch.java:57)
+at net.minecraft.launchwrapper.Launch.main(Launch.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+at thaumcraft.client.renderers.item.ItemThaumometerRenderer.doScan(ItemThaumometerRenderer.java:304)
+at thaumcraft.client.renderers.item.ItemThaumometerRenderer.renderItem(ItemThaumometerRenderer.java:170)
+at net.minecraftforge.client.ForgeHooksClient.renderEquippedItem(ForgeHooksClient.java:200)
+at net.minecraft.client.renderer.ItemRenderer.renderItem(ItemRenderer.java:89)
+at net.minecraft.client.renderer.ItemRenderer.func_78440_a(ItemRenderer.java:490)
+at net.minecraft.client.renderer.EntityRenderer.func_78476_b(EntityRenderer.java:712)
+at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1296)
+
+-- Affected level --
+Details:
+Level name: MpServer
+All players: 1 total; [EntityClientPlayerMP['Chrizz86'/352, l='MpServer', x=-29,54, y=72,62, z=-1545,60]]
+Chunk stats: MultiplayerChunkCache: 289
+Level seed: 0
+Level generator: ID 00 - default, ver 1. Features enabled: false
+Level generator options:
+Level spawn location: World: (-40,64,256), Chunk: (at 8,4,0 in -3,16; contains blocks -48,0,256 to -33,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+Level time: 4085973 game time, 4488326 day time
+Level dimension: 0
+Level storage version: 0x00000 - Unknown?
+Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Forced entities: 102 total; [EntityCreeper['Creeper'/1100, l='MpServer', x=-94,50, y=40,00, z=-1509,50], EntityZombie['Zombie'/1102, l='MpServer', x=-91,50, y=40,00, z=-1513,50], EntityHat['unknown'/5708, l='MpServer', x=-24,50, y=40,55, z=-1492,50], EntityClientPlayerMP['Chrizz86'/352, l='MpServer', x=-29,54, y=72,62, z=-1545,60], EntityHat['unknown'/5701, l='MpServer', x=35,91, y=73,55, z=-1490,88], EntityHat['unknown'/11961, l='MpServer', x=-83,50, y=19,55, z=-1620,50], EntityHat['unknown'/11962, l='MpServer', x=-84,50, y=19,55, z=-1619,50], EntityHat['unknown'/5702, l='MpServer', x=21,88, y=73,55, z=-1488,53], EntityCreeper['Creeper'/807, l='MpServer', x=51,38, y=72,00, z=-1471,41], EntityHat['unknown'/11948, l='MpServer', x=-32,50, y=52,28, z=-1503,50], EntityHat['unknown'/10018, l='MpServer', x=-47,59, y=26,55, z=-1478,94], EntityHat['unknown'/10019, l='MpServer', x=-64,50, y=74,55, z=-1538,50], EntityHat['unknown'/11947, l='MpServer', x=-14,56, y=21,28, z=-1622,97], EntityHat['unknown'/11946, l='MpServer', x=-91,50, y=41,55, z=-1513,50], EntityCreeper['Creeper'/1106, l='MpServer', x=-14,56, y=20,00, z=-1622,97], EntityHat['unknown'/10017, l='MpServer', x=-46,50, y=25,55, z=-1483,50], EntityHat['unknown'/517, l='MpServer', x=20,00, y=71,25, z=-1546,16], EntityHat['unknown'/518, l='MpServer', x=23,07, y=71,25, z=-1541,64], EntityHat['unknown'/519, l='MpServer', x=19,72, y=71,25, z=-1547,58], EntityHat['unknown'/12903, l='MpServer', x=-44,56, y=68,10, z=-1467,65], EntityHat['unknown'/524, l='MpServer', x=-47,19, y=77,75, z=-1583,80], EntityHat['unknown'/525, l='MpServer', x=-50,29, y=76,10, z=-1571,19], EntityHat['unknown'/527, l='MpServer', x=-61,16, y=16,40, z=-1600,34], EntityHat['unknown'/520, l='MpServer', x=25,66, y=71,25, z=-1548,17], EntityHat['unknown'/521, l='MpServer', x=27,22, y=71,25, z=-1546,53], EntityHat['unknown'/522, l='MpServer', x=25,74, y=71,25, z=-1542,62], EntityHat['unknown'/523, l='MpServer', x=30,15, y=72,10, z=-1528,49], EntitySkeleton['Skeleton'/792, l='MpServer', x=29,06, y=71,00, z=-1570,50], EntityHat['unknown'/532, l='MpServer', x=-77,16, y=73,10, z=-1559,00], EntityHat['unknown'/534, l='MpServer', x=-20,75, y=76,75, z=-1614,00], EntityHat['unknown'/528, l='MpServer', x=-57,43, y=17,57, z=-1609,33], EntityZombie['Zombie'/776, l='MpServer', x=-51,50, y=72,00, z=-1504,50], EntityEnderman['Enderman'/777, l='MpServer', x=-47,59, y=71,00, z=-1487,06], EntityBat['Bat'/1027, l='MpServer', x=-76,25, y=39,52, z=-1489,75], EntityBat['Bat'/871, l='MpServer', x=-45,32, y=31,78, z=-1607,16], EntityBat['Bat'/872, l='MpServer', x=-53,88, y=22,10, z=-1602,47], EntityHat['unknown'/9003, l='MpServer', x=26,13, y=84,75, z=-1478,53], EntityZombie['Zombie'/372, l='MpServer', x=-104,00, y=23,00, z=-1601,56], EntityHat['unknown'/579, l='MpServer', x=20,00, y=71,25, z=-1546,16], EntityHat['unknown'/580, l='MpServer', x=23,07, y=71,25, z=-1541,64], EntityHat['unknown'/581, l='MpServer', x=19,72, y=71,25, z=-1547,58], EntityHat['unknown'/582, l='MpServer', x=25,66, y=71,25, z=-1548,17], EntityHat['unknown'/583, l='MpServer', x=27,22, y=71,25, z=-1546,53], EntityHat['unknown'/584, l='MpServer', x=25,74, y=71,25, z=-1542,62], EntityHat['unknown'/585, l='MpServer', x=30,15, y=72,10, z=-1528,49], EntityMinecartChest['entity.MinecartChest.name'/383, l='MpServer', x=-80,50, y=40,50, z=-1491,25], EntityHat['unknown'/586, l='MpServer', x=-47,19, y=77,75, z=-1583,80], EntityZombie['Zombie'/382, l='MpServer', x=-94,91, y=24,00, z=-1591,34], EntityHat['unknown'/587, l='MpServer', x=-50,29, y=76,10, z=-1571,19], EntityHat['unknown'/589, l='MpServer', x=-61,16, y=16,40, z=-1600,34], EntityHat['unknown'/590, l='MpServer', x=-57,43, y=17,57, z=-1609,33], EntityHat['unknown'/594, l='MpServer', x=-77,16, y=73,10, z=-1559,00], EntityHat['unknown'/596, l='MpServer', x=-20,75, y=76,75, z=-1614,00], EntitySheep['Sheep'/395, l='MpServer', x=-77,22, y=72,00, z=-1558,50], EntitySkeleton['Skeleton'/698, l='MpServer', x=21,88, y=72,00, z=-1488,53], EntityBrainyZombie['Angry Zombie'/699, l='MpServer', x=36,50, y=72,00, z=-1492,50], EntitySkeleton['Skeleton'/695, l='MpServer', x=35,91, y=72,00, z=-1490,88], EntityPig['Pig'/440, l='MpServer', x=-47,53, y=77,00, z=-1583,66], EntityHat['unknown'/11806, l='MpServer', x=-94,91, y=25,55, z=-1591,34], EntityBat['Bat'/442, l='MpServer', x=-50,66, y=31,95, z=-1481,28], EntityPig['Pig'/445, l='MpServer', x=-21,09, y=76,00, z=-1614,13], EntityZombie['Zombie'/920, l='MpServer', x=-64,50, y=73,00, z=-1538,50], EntitySheep['Sheep'/432, l='MpServer', x=-44,97, y=67,00, z=-1467,94], EntityZombie['Zombie'/918, l='MpServer', x=-47,59, y=25,00, z=-1478,94], EntitySheep['Sheep'/433, l='MpServer', x=-60,63, y=64,00, z=-1471,53], EntitySheep['Sheep'/434, l='MpServer', x=-57,94, y=65,00, z=-1470,16], EntityZombie['Zombie'/917, l='MpServer', x=-46,50, y=24,00, z=-1483,50], EntitySheep['Sheep'/425, l='MpServer', x=-49,06, y=68,00, z=-1474,03], EntityHat['unknown'/9160, l='MpServer', x=36,50, y=73,55, z=-1492,50], EntityMinecartChest['entity.MinecartChest.name'/424, l='MpServer', x=-55,50, y=40,50, z=-1478,50], EntityMinecartChest['entity.MinecartChest.name'/426, l='MpServer', x=-54,50, y=29,50, z=-1471,13], EntityHat['unknown'/11583, l='MpServer', x=-11,38, y=70,10, z=-1468,35], EntityMinecartChest['entity.MinecartChest.name'/417, l='MpServer', x=-56,50, y=21,34, z=-1622,16], EntityMinecartChest['entity.MinecartChest.name'/416, l='MpServer', x=-61,50, y=25,50, z=-1621,50], EntityMinecartChest['entity.MinecartChest.name'/418, l='MpServer', x=-56,50, y=21,34, z=-1617,47], EntityEnderman['Enderman'/420, l='MpServer', x=-61,16, y=14,00, z=-1600,34], EntitySkeleton['Skeleton'/1272, l='MpServer', x=-83,50, y=18,00, z=-1620,50], EntitySheep['Sheep'/423, l='MpServer', x=-50,34, y=75,00, z=-1571,69], EntitySkeleton['Skeleton'/1273, l='MpServer', x=-84,50, y=18,00, z=-1619,50], EntitySpider['Spider'/422, l='MpServer', x=-57,50, y=17,00, z=-1609,50], EntityPig['Pig'/476, l='MpServer', x=26,50, y=84,00, z=-1478,50], EntityCow['Cow'/474, l='MpServer', x=20,09, y=70,00, z=-1546,66], EntitySheep['Sheep'/475, l='MpServer', x=29,66, y=71,00, z=-1528,56], EntityCow['Cow'/472, l='MpServer', x=22,94, y=70,00, z=-1542,13], EntityCow['Cow'/473, l='MpServer', x=20,09, y=70,00, z=-1547,91], EntityCow['Cow'/470, l='MpServer', x=26,06, y=70,00, z=-1547,88], EntityCow['Cow'/471, l='MpServer', x=26,72, y=70,00, z=-1546,56], EntityHat['unknown'/11348, l='MpServer', x=51,38, y=73,28, z=-1471,41], EntityCow['Cow'/469, l='MpServer', x=25,50, y=70,00, z=-1543,06], EntitySkeleton['Skeleton'/741, l='MpServer', x=-11,94, y=39,00, z=-1466,56], EntityHat['unknown'/11345, l='MpServer', x=-58,23, y=66,10, z=-1470,57], EntityHat['unknown'/11344, l='MpServer', x=-61,01, y=65,10, z=-1471,21], EntityCaveSpider['Cave Spider'/1437, l='MpServer', x=-28,51, y=-0,08, z=-33,85], EntitySheep['Sheep'/455, l='MpServer', x=-11,34, y=69,00, z=-1468,84], EntityHat['unknown'/5788, l='MpServer', x=29,06, y=72,55, z=-1570,50], EntityHat['unknown'/11878, l='MpServer', x=-94,50, y=41,28, z=-1509,50], EntityHat['unknown'/5787, l='MpServer', x=-47,59, y=73,40, z=-1487,06], EntityHat['unknown'/11012, l='MpServer', x=-48,61, y=69,10, z=-1474,23], EntityCreeper['Creeper'/978, l='MpServer', x=-37,50, y=44,00, z=-1466,50], EntityHat['unknown'/231, l='MpServer', x=-29,54, y=72,39, z=-1545,60], EntityZombie['Zombie'/710, l='MpServer', x=-24,50, y=39,00, z=-1492,50], EntityCreeper['Creeper'/1208, l='MpServer', x=-32,50, y=51,00, z=-1503,50]]
+Retry entities: 0 total; []
+Server brand: fml,forge
+Server type: Non-integrated multiplayer server
+Stacktrace:
+at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:440)
+at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2310)
+at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:861)
+at net.minecraft.client.main.Main.main(SourceFile:101)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at net.minecraft.launchwrapper.Launch.launch(Launch.java:57)
+at net.minecraft.launchwrapper.Launch.main(Launch.java:18)
+
+-- System Details --
+Details:
+Minecraft Version: 1.6.2
+Operating System: Windows 7 (amd64) version 6.1
+Java Version: 1.7.0_17, Oracle Corporation
+Java VM Version: Java HotSpot™ 64-Bit Server VM (mixed mode), Oracle Corporation
+Memory: 240406752 bytes (229 MB) / 534904832 bytes (510 MB) up to 954466304 bytes (910 MB)
+JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+AABB Pool Size: 1342 (75152 bytes; 0 MB) allocated, 1003 (56168 bytes; 0 MB) used
+Suspicious classes: FML and Forge are installed
+IntCache: cache: 0, tcache: 0, allocated: 6, tallocated: 62
+FML: MCP v8.04 FML v6.2.62.871 Minecraft Forge 9.10.1.871 44 mods loaded, 44 mods active
+mcp{8.04} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+FML{6.2.62.871} [Forge Mod Loader] (minecraftforge-9.10.1.871.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Forge{9.10.1.871} [Minecraft Forge] (minecraftforge-9.10.1.871.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+CodeChickenCore{0.9.0.5} [CodeChicken Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+InfiniBows{1.1.0 build 12} [Infinity Bow Fix] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NotEnoughItems{1.6.1.4} [Not Enough Items] (NotEnoughItems 1.6.1.4.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+DamageIndicatorsMod{2.9.0.9} [Damage Indicators] (1.6.4 DamageIndicators v2.9.0.9.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+arsmagica2{1.0.5-rc} [Ars Magica 2] (ArsMagica_1.0.0-release.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BiblioCraft{1.4.1} [BiblioCraft] (BiblioCraft[v1.4.1].zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BuildCraft|Core{4.0.1} [BuildCraft] (buildcraft-A-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BuildCraft|Builders{4.0.1} [BC Builders] (buildcraft-A-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BuildCraft|Energy{4.0.1} [BC Energy] (buildcraft-A-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BuildCraft|Factory{4.0.1} [BC Factory] (buildcraft-A-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BuildCraft|Transport{4.0.1} [BC Transport] (buildcraft-A-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+BuildCraft|Silicon{4.0.1} [BC Silicon] (buildcraft-A-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+ChickenChunks{1.3.3.2} [ChickenChunks] (ChickenChunks 1.3.3.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+DeathCounter{2.0.0} [DeathCounter] (DeathCounter2.0.0.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+EnderStorage{1.4.3.3} [EnderStorage] (EnderStorage 1.4.3.3.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Forestry{2.3.0.4} [Forestry for Minecraft] (forestry-A-2.3.0.4.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+factorization{0.8.04beta17} [Factorization] (Factorization-0.8.04beta17.jar.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+factorization.misc{0.8.04beta17} [Factorization Miscellaneous Nonsense] (Factorization-0.8.04beta17.jar.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+factorization.notify{0.8.04beta17} [Factorization Notification System] (Factorization-0.8.04beta17.jar.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+factorization.dimensionalSlice{0.8.04beta17} [Factorization Dimensional Slices] (Factorization-0.8.04beta17.jar.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Hats{2.0.2} [Hats] (Hats2.0.2.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+iChunUtil{2.3.0} [iChunUtil] (iChunUtil2.3.0.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+inventorytweaks{1.56} [Inventory Tweaks] (InventoryTweaks-MC1.6.2-1.56-b77.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+IronChest{5.3.14.512} [Iron Chest] (ironchest-universal-1.6.2-5.3.14.512.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+TConstruct{1.6.2_1.4.5} [Tinkers' Construct] (TConstruct_1.6.2_1.4.5.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Thaumcraft{4.0.2a} [Thaumcraft] (Thaumcraft4.0.2a.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+ThaumicTinkerer{2.0} [Thaumic Tinkerer] (ThaumicTinkerer 2.0-20.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+MagicBees{2.1.6} [Magic Bees] (magicbees-2.1.6.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+MapWriter{2.0} [MapWriter] (mapwriter-2.0.10.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Morph{0.3.0} [Morph] (Morph-Beta-0.3.0.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Mystcraft{0.10.6.00} [Mystcraft] (mystcraft-uni-1.6.2-0.10.6.00.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NEIAddons{1.9.0.r40} [NEI Addons] (neiaddons-1.6.2-1.9.0.r40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NEIAddons|AE{1.9.0.r40} [NEI Addons: Applied Energistics] (neiaddons-1.6.2-1.9.0.r40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NEIAddons|CraftingTables{1.9.0.r40} [NEI Addons: Crafting Tables] (neiaddons-1.6.2-1.9.0.r40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NEIAddons|ExtraBees{1.9.0.r40} [NEI Addons: Extra Bees] (neiaddons-1.6.2-1.9.0.r40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NEIAddons|Forestry{1.9.0.r40} [NEI Addons: Forestry] (neiaddons-1.6.2-1.9.0.r40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+NEIAddons|MiscPeripherals{1.9.0.r40} [NEI Addons: Misc Peripherals] (neiaddons-1.6.2-1.9.0.r40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+ObsidiPlates{2.0.0} [Obsidian Pressure Plates] (obsidiplates-1.6.2-universal-2.0.0.15.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+PortalGun{2.0.1} [PortalGun] (PortalGun2.0.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Railcraft{8.1.0.0} [Railcraft] (Railcraft_1.6.2-8.1.0.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+TConstruct|CompatMineFactoryReloaded{0.1} [TConstruct Compat: MFR] (TConstruct_1.6.2_1.4.5.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+Launched Version: 1.6.2-Forge9.10.1.871
+LWJGL: 2.9.0
+OpenGL: GeForce GT 545/PCIe/SSE2 GL version 4.3.0, NVIDIA Corporation
+Is Modded: Definitely; Client brand changed to 'fml,forge'
+Type: Client (map_client.txt)
+Resource Pack: Default
+Current Language: English (US)
+Profiler Position: N/A (disabled)
+Vec3 Pool Size: 1025 (57400 bytes; 0 MB) allocated, 137 (7672 bytes; 0 MB) used
